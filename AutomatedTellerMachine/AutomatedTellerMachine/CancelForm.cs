@@ -31,6 +31,7 @@ namespace AutomatedTellerMachine
             logInForm logInF = new logInForm();
             logInF.ShowDialog();
             this.Close();
+            Close();
         }
 
 
