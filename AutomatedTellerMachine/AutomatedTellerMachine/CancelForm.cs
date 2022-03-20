@@ -20,7 +20,7 @@ namespace AutomatedTellerMachine
         private void CancelForm_Load(object sender, EventArgs e)
         {
             this.timer1.Enabled = true;
-            this.timer1.Interval = 5000;
+            this.timer1.Interval = 2000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
         }
 
@@ -28,12 +28,7 @@ namespace AutomatedTellerMachine
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.Hide();
-            logInForm logInF = new logInForm();
-            logInF.ShowDialog();
             this.Close();
-            Close();
         }
-
-
     }
 }

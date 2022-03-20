@@ -94,11 +94,11 @@ namespace AutomatedTellerMachine
 
         //This method will cancel the transaction and return to login page
         private void cancel_button_Click(object sender, EventArgs e)
-        {
+        {  
             this.Hide();
             cancelForm cancelF = new cancelForm();
             cancelF.ShowDialog();
-            this.Close();
+            this.Close();        
         }
     }
 }
