@@ -10,3 +10,5 @@ C:\Users\Chris\Documents\GitHub\COMP3400-Project\AutomatedTellerMachine\Automate
 C:\Users\Chris\Documents\GitHub\COMP3400-Project\AutomatedTellerMachine\AutomatedTellerMachine\obj\Debug\AutomatedTellerMachine.pdb
 C:\Users\Chris\Documents\GitHub\COMP3400-Project\AutomatedTellerMachine\AutomatedTellerMachine\obj\Debug\AutomatedTellerMachine.cancelForm.resources
 C:\Users\Chris\Documents\GitHub\COMP3400-Project\AutomatedTellerMachine\AutomatedTellerMachine\obj\Debug\AutomatedTellerMachine.logInForm.resources
+C:\Users\Chris\Documents\GitHub\COMP3400-Project\AutomatedTellerMachine\AutomatedTellerMachine\obj\Debug\AutomatedTellerMachine.menuForm.resources
+C:\Users\Chris\Documents\GitHub\COMP3400-Project\AutomatedTellerMachine\AutomatedTellerMachine\obj\Debug\AutomatedTellerMachine.balanceForm.resources

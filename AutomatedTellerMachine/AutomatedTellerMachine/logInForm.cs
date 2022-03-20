@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,9 +15,28 @@ namespace AutomatedTellerMachine
     {
         bool accWrite = true;
         bool pinWrite = false;
+
+        //Connect to the database
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-4RQCFAD;Initial Catalog=atmP;User ID=admin;Password=12345");
         public logInForm()
         {
             InitializeComponent();
+        }
+
+        //Connect to the database at start
+        private void logInForm_Load(object sender, EventArgs e)
+        {
+           
+            try
+            {
+                con.Open();
+                MessageBox.Show("You are connected to the database!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Can not connect to the database!");
+            }
+
         }
 
         //This method will add text when a number's button has been pressed.
@@ -81,18 +101,49 @@ namespace AutomatedTellerMachine
 
         private void enter_button_Click(object sender, EventArgs e)
         {
+            errorLabel.Text = "";
+
             if (accWrite && accNumber_textBox.Text != "")
             {
                 accWrite = false;
                 pinNumber_textBox.Focus();
                 pinWrite = true;
             }
-            else { 
-                
+
+            //Check if acc and pin exists
+            else {
+
+                string qryUserName = "select * from userTable where AccNumber='" + accNumber_textBox.Text + "' AND AccPinNumber='" + pinNumber_textBox.Text + "'";
+                SqlCommand cmd = new SqlCommand(qryUserName, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                String name = "";
+                decimal balance = 0;
+
+                while (dr.Read()) {
+                    name = dr["UserName"].ToString();
+                    balance = decimal.Parse(dr["Balance"].ToString());
+                }
+                dr.Close();
+
+                //If exists go to the next form
+                if (name != "") 
+                {
+                    this.Hide();
+                    menuForm mForm = new menuForm();
+                    mForm.fromLogIn(name, balance);
+                    mForm.ShowDialog();
+                    con.Close();
+                    this.Close();                     
+                }
+
+                //If it doesn't exist, display error label.
+                else {
+                    errorLabel.Text = "Account not found! Please check the account or pin number.";
+                }
             }
         }
 
-        //This method will cancel the transaction and return to login page
+        //This method will cancel the transaction and close the program
         private void cancel_button_Click(object sender, EventArgs e)
         {  
             this.Hide();
@@ -100,5 +151,7 @@ namespace AutomatedTellerMachine
             cancelF.ShowDialog();
             this.Close();        
         }
+
+        
     }
 }

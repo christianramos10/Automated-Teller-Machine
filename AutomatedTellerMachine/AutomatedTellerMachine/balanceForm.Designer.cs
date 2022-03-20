@@ -1,6 +1,6 @@
 ﻿namespace AutomatedTellerMachine
 {
-    partial class logInForm
+    partial class balanceForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.windowBox = new System.Windows.Forms.GroupBox();
-            this.pinNumber_textBox = new System.Windows.Forms.TextBox();
-            this.accNumber_textBox = new System.Windows.Forms.TextBox();
-            this.pinNumber_label = new System.Windows.Forms.Label();
-            this.accNumber_label = new System.Windows.Forms.Label();
-            this.welcome_label = new System.Windows.Forms.Label();
+            this.cashBox = new System.Windows.Forms.GroupBox();
             this.inputBox = new System.Windows.Forms.GroupBox();
             this.enter_button = new System.Windows.Forms.Button();
             this.cancel_button = new System.Windows.Forms.Button();
@@ -49,70 +44,22 @@
             this.nine_button = new System.Windows.Forms.Button();
             this.eight_button = new System.Windows.Forms.Button();
             this.seven_button = new System.Windows.Forms.Button();
-            this.cashBox = new System.Windows.Forms.GroupBox();
-            this.errorLabel = new System.Windows.Forms.Label();
-            this.windowBox.SuspendLayout();
+            this.windowBox = new System.Windows.Forms.GroupBox();
+            this.tittle_label = new System.Windows.Forms.Label();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.balanceLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.inputBox.SuspendLayout();
+            this.windowBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // windowBox
+            // cashBox
             // 
-            this.windowBox.Controls.Add(this.errorLabel);
-            this.windowBox.Controls.Add(this.pinNumber_textBox);
-            this.windowBox.Controls.Add(this.accNumber_textBox);
-            this.windowBox.Controls.Add(this.pinNumber_label);
-            this.windowBox.Controls.Add(this.accNumber_label);
-            this.windowBox.Controls.Add(this.welcome_label);
-            this.windowBox.Location = new System.Drawing.Point(161, 12);
-            this.windowBox.Name = "windowBox";
-            this.windowBox.Size = new System.Drawing.Size(412, 204);
-            this.windowBox.TabIndex = 0;
-            this.windowBox.TabStop = false;
-            // 
-            // pinNumber_textBox
-            // 
-            this.pinNumber_textBox.Location = new System.Drawing.Point(143, 125);
-            this.pinNumber_textBox.Name = "pinNumber_textBox";
-            this.pinNumber_textBox.Size = new System.Drawing.Size(100, 20);
-            this.pinNumber_textBox.TabIndex = 1;
-            // 
-            // accNumber_textBox
-            // 
-            this.accNumber_textBox.Location = new System.Drawing.Point(296, 83);
-            this.accNumber_textBox.Name = "accNumber_textBox";
-            this.accNumber_textBox.Size = new System.Drawing.Size(100, 20);
-            this.accNumber_textBox.TabIndex = 0;
-            // 
-            // pinNumber_label
-            // 
-            this.pinNumber_label.AutoSize = true;
-            this.pinNumber_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pinNumber_label.Location = new System.Drawing.Point(6, 125);
-            this.pinNumber_label.Name = "pinNumber_label";
-            this.pinNumber_label.Size = new System.Drawing.Size(131, 20);
-            this.pinNumber_label.TabIndex = 5;
-            this.pinNumber_label.Text = "Enter your pin: ";
-            // 
-            // accNumber_label
-            // 
-            this.accNumber_label.AutoSize = true;
-            this.accNumber_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accNumber_label.Location = new System.Drawing.Point(6, 81);
-            this.accNumber_label.Name = "accNumber_label";
-            this.accNumber_label.Size = new System.Drawing.Size(293, 20);
-            this.accNumber_label.TabIndex = 4;
-            this.accNumber_label.Text = "Please enter your account number: ";
-            // 
-            // welcome_label
-            // 
-            this.welcome_label.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.welcome_label.AutoSize = true;
-            this.welcome_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcome_label.Location = new System.Drawing.Point(143, 16);
-            this.welcome_label.Name = "welcome_label";
-            this.welcome_label.Size = new System.Drawing.Size(153, 33);
-            this.welcome_label.TabIndex = 3;
-            this.welcome_label.Text = "Welcome!";
+            this.cashBox.Location = new System.Drawing.Point(371, 222);
+            this.cashBox.Name = "cashBox";
+            this.cashBox.Size = new System.Drawing.Size(417, 269);
+            this.cashBox.TabIndex = 8;
+            this.cashBox.TabStop = false;
             // 
             // inputBox
             // 
@@ -133,7 +80,7 @@
             this.inputBox.Location = new System.Drawing.Point(12, 222);
             this.inputBox.Name = "inputBox";
             this.inputBox.Size = new System.Drawing.Size(353, 269);
-            this.inputBox.TabIndex = 1;
+            this.inputBox.TabIndex = 7;
             this.inputBox.TabStop = false;
             // 
             // enter_button
@@ -167,7 +114,6 @@
             this.clear_button.TabIndex = 11;
             this.clear_button.Text = "Clear";
             this.clear_button.UseVisualStyleBackColor = true;
-            this.clear_button.Click += new System.EventHandler(this.clear_button_Click);
             // 
             // backspace_button
             // 
@@ -178,7 +124,6 @@
             this.backspace_button.TabIndex = 10;
             this.backspace_button.Text = "←";
             this.backspace_button.UseVisualStyleBackColor = true;
-            this.backspace_button.Click += new System.EventHandler(this.backspace_button_Click);
             // 
             // zero_button
             // 
@@ -189,7 +134,6 @@
             this.zero_button.TabIndex = 9;
             this.zero_button.Text = "0";
             this.zero_button.UseVisualStyleBackColor = true;
-            this.zero_button.Click += new System.EventHandler(this.num_Clicked);
             // 
             // three_button
             // 
@@ -200,7 +144,6 @@
             this.three_button.TabIndex = 8;
             this.three_button.Text = "3";
             this.three_button.UseVisualStyleBackColor = true;
-            this.three_button.Click += new System.EventHandler(this.num_Clicked);
             // 
             // two_button
             // 
@@ -211,7 +154,6 @@
             this.two_button.TabIndex = 7;
             this.two_button.Text = "2";
             this.two_button.UseVisualStyleBackColor = true;
-            this.two_button.Click += new System.EventHandler(this.num_Clicked);
             // 
             // one_button
             // 
@@ -222,7 +164,6 @@
             this.one_button.TabIndex = 6;
             this.one_button.Text = "1";
             this.one_button.UseVisualStyleBackColor = true;
-            this.one_button.Click += new System.EventHandler(this.num_Clicked);
             // 
             // six_button
             // 
@@ -233,7 +174,6 @@
             this.six_button.TabIndex = 5;
             this.six_button.Text = "6";
             this.six_button.UseVisualStyleBackColor = true;
-            this.six_button.Click += new System.EventHandler(this.num_Clicked);
             // 
             // five_button
             // 
@@ -244,7 +184,6 @@
             this.five_button.TabIndex = 4;
             this.five_button.Text = "5";
             this.five_button.UseVisualStyleBackColor = true;
-            this.five_button.Click += new System.EventHandler(this.num_Clicked);
             // 
             // four_button
             // 
@@ -255,7 +194,6 @@
             this.four_button.TabIndex = 3;
             this.four_button.Text = "4";
             this.four_button.UseVisualStyleBackColor = true;
-            this.four_button.Click += new System.EventHandler(this.num_Clicked);
             // 
             // nine_button
             // 
@@ -266,7 +204,6 @@
             this.nine_button.TabIndex = 2;
             this.nine_button.Text = "9";
             this.nine_button.UseVisualStyleBackColor = true;
-            this.nine_button.Click += new System.EventHandler(this.num_Clicked);
             // 
             // eight_button
             // 
@@ -277,7 +214,6 @@
             this.eight_button.TabIndex = 1;
             this.eight_button.Text = "8";
             this.eight_button.UseVisualStyleBackColor = true;
-            this.eight_button.Click += new System.EventHandler(this.num_Clicked);
             // 
             // seven_button
             // 
@@ -288,27 +224,61 @@
             this.seven_button.TabIndex = 0;
             this.seven_button.Text = "7";
             this.seven_button.UseVisualStyleBackColor = true;
-            this.seven_button.Click += new System.EventHandler(this.num_Clicked);
             // 
-            // cashBox
+            // windowBox
             // 
-            this.cashBox.Location = new System.Drawing.Point(371, 222);
-            this.cashBox.Name = "cashBox";
-            this.cashBox.Size = new System.Drawing.Size(417, 269);
-            this.cashBox.TabIndex = 2;
-            this.cashBox.TabStop = false;
+            this.windowBox.Controls.Add(this.label1);
+            this.windowBox.Controls.Add(this.balanceLabel);
+            this.windowBox.Controls.Add(this.nameLabel);
+            this.windowBox.Controls.Add(this.tittle_label);
+            this.windowBox.Location = new System.Drawing.Point(161, 12);
+            this.windowBox.Name = "windowBox";
+            this.windowBox.Size = new System.Drawing.Size(412, 204);
+            this.windowBox.TabIndex = 6;
+            this.windowBox.TabStop = false;
             // 
-            // errorLabel
+            // tittle_label
             // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorLabel.Location = new System.Drawing.Point(7, 177);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(0, 15);
-            this.errorLabel.TabIndex = 6;
+            this.tittle_label.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tittle_label.AutoSize = true;
+            this.tittle_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tittle_label.Location = new System.Drawing.Point(84, 16);
+            this.tittle_label.Name = "tittle_label";
+            this.tittle_label.Size = new System.Drawing.Size(248, 33);
+            this.tittle_label.TabIndex = 3;
+            this.tittle_label.Text = "Account Balance";
             // 
-            // logInForm
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.Location = new System.Drawing.Point(6, 75);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(84, 24);
+            this.nameLabel.TabIndex = 4;
+            this.nameLabel.Text = "-Name: ";
+            // 
+            // balanceLabel
+            // 
+            this.balanceLabel.AutoSize = true;
+            this.balanceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.balanceLabel.Location = new System.Drawing.Point(6, 109);
+            this.balanceLabel.Name = "balanceLabel";
+            this.balanceLabel.Size = new System.Drawing.Size(104, 24);
+            this.balanceLabel.TabIndex = 5;
+            this.balanceLabel.Text = "-Balance: ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(7, 149);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(369, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Press \"Enter\" to Go Back to Menu or \"Cancel\" to Exit.";
+            // 
+            // balanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -316,24 +286,22 @@
             this.Controls.Add(this.cashBox);
             this.Controls.Add(this.inputBox);
             this.Controls.Add(this.windowBox);
-            this.Name = "logInForm";
-            this.Text = "ATM";
-            this.Load += new System.EventHandler(this.logInForm_Load);
+            this.Name = "balanceForm";
+            this.Text = "balanceForm";
+            this.inputBox.ResumeLayout(false);
             this.windowBox.ResumeLayout(false);
             this.windowBox.PerformLayout();
-            this.inputBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox windowBox;
-        private System.Windows.Forms.GroupBox inputBox;
         private System.Windows.Forms.GroupBox cashBox;
-        private System.Windows.Forms.Button nine_button;
-        private System.Windows.Forms.Button eight_button;
-        private System.Windows.Forms.Button seven_button;
+        private System.Windows.Forms.GroupBox inputBox;
+        private System.Windows.Forms.Button enter_button;
+        private System.Windows.Forms.Button cancel_button;
+        private System.Windows.Forms.Button clear_button;
         private System.Windows.Forms.Button backspace_button;
         private System.Windows.Forms.Button zero_button;
         private System.Windows.Forms.Button three_button;
@@ -342,15 +310,13 @@
         private System.Windows.Forms.Button six_button;
         private System.Windows.Forms.Button five_button;
         private System.Windows.Forms.Button four_button;
-        private System.Windows.Forms.Button clear_button;
-        private System.Windows.Forms.Button enter_button;
-        private System.Windows.Forms.Button cancel_button;
-        private System.Windows.Forms.TextBox pinNumber_textBox;
-        private System.Windows.Forms.TextBox accNumber_textBox;
-        private System.Windows.Forms.Label pinNumber_label;
-        private System.Windows.Forms.Label accNumber_label;
-        private System.Windows.Forms.Label welcome_label;
-        private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.Button nine_button;
+        private System.Windows.Forms.Button eight_button;
+        private System.Windows.Forms.Button seven_button;
+        private System.Windows.Forms.GroupBox windowBox;
+        private System.Windows.Forms.Label balanceLabel;
+        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Label tittle_label;
+        private System.Windows.Forms.Label label1;
     }
 }
-
