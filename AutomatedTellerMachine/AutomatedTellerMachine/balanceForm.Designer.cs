@@ -45,10 +45,10 @@
             this.eight_button = new System.Windows.Forms.Button();
             this.seven_button = new System.Windows.Forms.Button();
             this.windowBox = new System.Windows.Forms.GroupBox();
-            this.tittle_label = new System.Windows.Forms.Label();
-            this.nameLabel = new System.Windows.Forms.Label();
-            this.balanceLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.balanceLabel = new System.Windows.Forms.Label();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.tittle_label = new System.Windows.Forms.Label();
             this.inputBox.SuspendLayout();
             this.windowBox.SuspendLayout();
             this.SuspendLayout();
@@ -237,26 +237,15 @@
             this.windowBox.TabIndex = 6;
             this.windowBox.TabStop = false;
             // 
-            // tittle_label
+            // label1
             // 
-            this.tittle_label.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tittle_label.AutoSize = true;
-            this.tittle_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tittle_label.Location = new System.Drawing.Point(84, 16);
-            this.tittle_label.Name = "tittle_label";
-            this.tittle_label.Size = new System.Drawing.Size(248, 33);
-            this.tittle_label.TabIndex = 3;
-            this.tittle_label.Text = "Account Balance";
-            // 
-            // nameLabel
-            // 
-            this.nameLabel.AutoSize = true;
-            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel.Location = new System.Drawing.Point(6, 75);
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(84, 24);
-            this.nameLabel.TabIndex = 4;
-            this.nameLabel.Text = "-Name: ";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(7, 149);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(369, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Press \"Enter\" to Go Back to Menu or \"Cancel\" to Exit.";
             // 
             // balanceLabel
             // 
@@ -268,15 +257,26 @@
             this.balanceLabel.TabIndex = 5;
             this.balanceLabel.Text = "-Balance: ";
             // 
-            // label1
+            // nameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 149);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(369, 16);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Press \"Enter\" to Go Back to Menu or \"Cancel\" to Exit.";
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.Location = new System.Drawing.Point(6, 75);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(84, 24);
+            this.nameLabel.TabIndex = 4;
+            this.nameLabel.Text = "-Name: ";
+            // 
+            // tittle_label
+            // 
+            this.tittle_label.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tittle_label.AutoSize = true;
+            this.tittle_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tittle_label.Location = new System.Drawing.Point(84, 16);
+            this.tittle_label.Name = "tittle_label";
+            this.tittle_label.Size = new System.Drawing.Size(248, 33);
+            this.tittle_label.TabIndex = 3;
+            this.tittle_label.Text = "Account Balance";
             // 
             // balanceForm
             // 
@@ -288,6 +288,7 @@
             this.Controls.Add(this.windowBox);
             this.Name = "balanceForm";
             this.Text = "balanceForm";
+            this.Load += new System.EventHandler(this.balanceForm_Load);
             this.inputBox.ResumeLayout(false);
             this.windowBox.ResumeLayout(false);
             this.windowBox.PerformLayout();

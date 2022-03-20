@@ -13,11 +13,10 @@ namespace AutomatedTellerMachine
 {
     public partial class menuForm : Form
     {
-        string accNumber = "";
-        string accPin = "";
+        decimal balance = 0;
+        String name = "", accountNumber = "", pin = "";
+        string choice = "";
 
-        //Connect to the database
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-4RQCFAD;Initial Catalog=atmP;User ID=admin;Password=12345");
         public menuForm()
         {
             InitializeComponent();
@@ -28,9 +27,12 @@ namespace AutomatedTellerMachine
 
         }
 
-        public void fromLogIn(string name, decimal balance) {
-            welcome_label.Text += " " + name + " " + balance.ToString();
-           
+        public void fromLogIn(string name, decimal balance, string accountNumber, string pin) {
+            welcome_label.Text += " " + name;
+            this.name = name; 
+            this.balance = balance;
+            this.accountNumber = accountNumber; 
+            this.pin = pin; 
         }
 
         //This method will cancel the transaction and close the program
@@ -45,13 +47,14 @@ namespace AutomatedTellerMachine
         //Open the form selected
         private void num_Clicked(object sender, EventArgs e)
         {
-            Button button = new Button();
-            string choice = button.Text;
+            Button button = (Button) sender;
+            choice = button.Text;
 
             switch (choice) {
                 case "1":
                     this.Hide();
                     balanceForm balanceF = new balanceForm();
+                    balanceF.fromMenu(name, balance, accountNumber, pin);
                     balanceF.ShowDialog();
                     this.Close();
                     break;

@@ -116,12 +116,15 @@ namespace AutomatedTellerMachine
                 string qryUserName = "select * from userTable where AccNumber='" + accNumber_textBox.Text + "' AND AccPinNumber='" + pinNumber_textBox.Text + "'";
                 SqlCommand cmd = new SqlCommand(qryUserName, con);
                 SqlDataReader dr = cmd.ExecuteReader();
-                String name = "";
+                String name = "", accountNumber = "", pin="";
+                
                 decimal balance = 0;
 
                 while (dr.Read()) {
                     name = dr["UserName"].ToString();
                     balance = decimal.Parse(dr["Balance"].ToString());
+                    accountNumber = dr["AccNumber"].ToString();
+                    pin = dr["AccPinNumber"].ToString();
                 }
                 dr.Close();
 
@@ -130,7 +133,7 @@ namespace AutomatedTellerMachine
                 {
                     this.Hide();
                     menuForm mForm = new menuForm();
-                    mForm.fromLogIn(name, balance);
+                    mForm.fromLogIn(name, balance, accountNumber, pin);
                     mForm.ShowDialog();
                     con.Close();
                     this.Close();                     
