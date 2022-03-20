@@ -1,6 +1,6 @@
 ﻿namespace AutomatedTellerMachine
 {
-    partial class Form1
+    partial class logIn_accNumber
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,8 @@
         {
             this.windowBox = new System.Windows.Forms.GroupBox();
             this.inputBox = new System.Windows.Forms.GroupBox();
+            this.enter_button = new System.Windows.Forms.Button();
+            this.cancel_button = new System.Windows.Forms.Button();
             this.clear_button = new System.Windows.Forms.Button();
             this.backspace_button = new System.Windows.Forms.Button();
             this.zero_button = new System.Windows.Forms.Button();
@@ -43,16 +45,25 @@
             this.eight_button = new System.Windows.Forms.Button();
             this.seven_button = new System.Windows.Forms.Button();
             this.cashBox = new System.Windows.Forms.GroupBox();
-            this.cancel_button = new System.Windows.Forms.Button();
-            this.enter_button = new System.Windows.Forms.Button();
+            this.welcome_label = new System.Windows.Forms.Label();
+            this.accNumber_label = new System.Windows.Forms.Label();
+            this.pinNumber_label = new System.Windows.Forms.Label();
+            this.accNumber_textBox = new System.Windows.Forms.TextBox();
+            this.pinNumber_textBox = new System.Windows.Forms.TextBox();
+            this.windowBox.SuspendLayout();
             this.inputBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // windowBox
             // 
-            this.windowBox.Location = new System.Drawing.Point(173, 12);
+            this.windowBox.Controls.Add(this.pinNumber_textBox);
+            this.windowBox.Controls.Add(this.accNumber_textBox);
+            this.windowBox.Controls.Add(this.pinNumber_label);
+            this.windowBox.Controls.Add(this.accNumber_label);
+            this.windowBox.Controls.Add(this.welcome_label);
+            this.windowBox.Location = new System.Drawing.Point(161, 12);
             this.windowBox.Name = "windowBox";
-            this.windowBox.Size = new System.Drawing.Size(388, 204);
+            this.windowBox.Size = new System.Drawing.Size(412, 204);
             this.windowBox.TabIndex = 0;
             this.windowBox.TabStop = false;
             // 
@@ -77,6 +88,26 @@
             this.inputBox.Size = new System.Drawing.Size(353, 269);
             this.inputBox.TabIndex = 1;
             this.inputBox.TabStop = false;
+            // 
+            // enter_button
+            // 
+            this.enter_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enter_button.Location = new System.Drawing.Point(249, 141);
+            this.enter_button.Name = "enter_button";
+            this.enter_button.Size = new System.Drawing.Size(98, 116);
+            this.enter_button.TabIndex = 14;
+            this.enter_button.Text = "Enter";
+            this.enter_button.UseVisualStyleBackColor = true;
+            // 
+            // cancel_button
+            // 
+            this.cancel_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancel_button.Location = new System.Drawing.Point(249, 19);
+            this.cancel_button.Name = "cancel_button";
+            this.cancel_button.Size = new System.Drawing.Size(98, 116);
+            this.cancel_button.TabIndex = 12;
+            this.cancel_button.Text = "Cancel";
+            this.cancel_button.UseVisualStyleBackColor = true;
             // 
             // clear_button
             // 
@@ -206,27 +237,52 @@
             this.cashBox.TabIndex = 2;
             this.cashBox.TabStop = false;
             // 
-            // cancel_button
+            // welcome_label
             // 
-            this.cancel_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancel_button.Location = new System.Drawing.Point(249, 19);
-            this.cancel_button.Name = "cancel_button";
-            this.cancel_button.Size = new System.Drawing.Size(98, 116);
-            this.cancel_button.TabIndex = 12;
-            this.cancel_button.Text = "Cancel";
-            this.cancel_button.UseVisualStyleBackColor = true;
+            this.welcome_label.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.welcome_label.AutoSize = true;
+            this.welcome_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcome_label.Location = new System.Drawing.Point(143, 16);
+            this.welcome_label.Name = "welcome_label";
+            this.welcome_label.Size = new System.Drawing.Size(153, 33);
+            this.welcome_label.TabIndex = 3;
+            this.welcome_label.Text = "Welcome!";
             // 
-            // enter_button
+            // accNumber_label
             // 
-            this.enter_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enter_button.Location = new System.Drawing.Point(249, 141);
-            this.enter_button.Name = "enter_button";
-            this.enter_button.Size = new System.Drawing.Size(98, 116);
-            this.enter_button.TabIndex = 14;
-            this.enter_button.Text = "Enter";
-            this.enter_button.UseVisualStyleBackColor = true;
+            this.accNumber_label.AutoSize = true;
+            this.accNumber_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accNumber_label.Location = new System.Drawing.Point(6, 81);
+            this.accNumber_label.Name = "accNumber_label";
+            this.accNumber_label.Size = new System.Drawing.Size(293, 20);
+            this.accNumber_label.TabIndex = 4;
+            this.accNumber_label.Text = "Please enter your account number: ";
             // 
-            // Form1
+            // pinNumber_label
+            // 
+            this.pinNumber_label.AutoSize = true;
+            this.pinNumber_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pinNumber_label.Location = new System.Drawing.Point(6, 125);
+            this.pinNumber_label.Name = "pinNumber_label";
+            this.pinNumber_label.Size = new System.Drawing.Size(131, 20);
+            this.pinNumber_label.TabIndex = 5;
+            this.pinNumber_label.Text = "Enter your pin: ";
+            // 
+            // accNumber_textBox
+            // 
+            this.accNumber_textBox.Location = new System.Drawing.Point(296, 83);
+            this.accNumber_textBox.Name = "accNumber_textBox";
+            this.accNumber_textBox.Size = new System.Drawing.Size(100, 20);
+            this.accNumber_textBox.TabIndex = 3;
+            // 
+            // pinNumber_textBox
+            // 
+            this.pinNumber_textBox.Location = new System.Drawing.Point(143, 125);
+            this.pinNumber_textBox.Name = "pinNumber_textBox";
+            this.pinNumber_textBox.Size = new System.Drawing.Size(100, 20);
+            this.pinNumber_textBox.TabIndex = 6;
+            // 
+            // logIn_accNumber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -234,8 +290,10 @@
             this.Controls.Add(this.cashBox);
             this.Controls.Add(this.inputBox);
             this.Controls.Add(this.windowBox);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "logIn_accNumber";
+            this.Text = "ATM";
+            this.windowBox.ResumeLayout(false);
+            this.windowBox.PerformLayout();
             this.inputBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -260,6 +318,11 @@
         private System.Windows.Forms.Button clear_button;
         private System.Windows.Forms.Button enter_button;
         private System.Windows.Forms.Button cancel_button;
+        private System.Windows.Forms.TextBox pinNumber_textBox;
+        private System.Windows.Forms.TextBox accNumber_textBox;
+        private System.Windows.Forms.Label pinNumber_label;
+        private System.Windows.Forms.Label accNumber_label;
+        private System.Windows.Forms.Label welcome_label;
     }
 }
 

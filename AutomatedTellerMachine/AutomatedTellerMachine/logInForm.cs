@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AutomatedTellerMachine
 {
-    public partial class Form1 : Form
+    public partial class logIn_accNumber : Form
     {
-        public Form1()
+        public logIn_accNumber()
         {
             InitializeComponent();
         }
