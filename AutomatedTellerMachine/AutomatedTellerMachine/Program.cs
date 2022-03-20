@@ -16,7 +16,7 @@ namespace AutomatedTellerMachine
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new logIn_accNumber());
+            Application.Run(new logInForm());
         }
     }
 }
