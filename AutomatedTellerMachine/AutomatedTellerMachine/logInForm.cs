@@ -134,6 +134,11 @@ namespace AutomatedTellerMachine
                 //If it doesn't exist, display error label.
                 else {
                     errorLabel.Text = "Account not found! Please check the account or pin number.";
+                    accNumber_textBox.Text = "";
+                    pinNumber_textBox.Text = "";
+                    accNumber_textBox.Focus();
+                    accWrite = true;
+                    pinWrite = false;
                 }
             }
         }

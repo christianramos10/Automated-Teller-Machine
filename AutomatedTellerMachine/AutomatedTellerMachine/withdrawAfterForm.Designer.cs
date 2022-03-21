@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.cashBox = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.cashButton = new System.Windows.Forms.Button();
             this.inputBox = new System.Windows.Forms.GroupBox();
             this.enter_button = new System.Windows.Forms.Button();
             this.cancel_button = new System.Windows.Forms.Button();
@@ -45,12 +47,11 @@
             this.eight_button = new System.Windows.Forms.Button();
             this.seven_button = new System.Windows.Forms.Button();
             this.windowBox = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rememberLabel = new System.Windows.Forms.Label();
             this.balanceLabel = new System.Windows.Forms.Label();
             this.widthdrawnLabel = new System.Windows.Forms.Label();
             this.welcome_label = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.cashBox.SuspendLayout();
             this.inputBox.SuspendLayout();
             this.windowBox.SuspendLayout();
@@ -59,12 +60,33 @@
             // cashBox
             // 
             this.cashBox.Controls.Add(this.button2);
-            this.cashBox.Controls.Add(this.button1);
+            this.cashBox.Controls.Add(this.cashButton);
             this.cashBox.Location = new System.Drawing.Point(371, 222);
             this.cashBox.Name = "cashBox";
             this.cashBox.Size = new System.Drawing.Size(417, 269);
             this.cashBox.TabIndex = 11;
             this.cashBox.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(0, 162);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(417, 95);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Insert deposit envelope here";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // cashButton
+            // 
+            this.cashButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cashButton.Location = new System.Drawing.Point(0, 11);
+            this.cashButton.Name = "cashButton";
+            this.cashButton.Size = new System.Drawing.Size(417, 95);
+            this.cashButton.TabIndex = 11;
+            this.cashButton.Text = "Take Cash Here";
+            this.cashButton.UseVisualStyleBackColor = true;
+            this.cashButton.Click += new System.EventHandler(this.cashButton_Click);
             // 
             // inputBox
             // 
@@ -232,7 +254,8 @@
             // 
             // windowBox
             // 
-            this.windowBox.Controls.Add(this.label3);
+            this.windowBox.Controls.Add(this.label1);
+            this.windowBox.Controls.Add(this.rememberLabel);
             this.windowBox.Controls.Add(this.balanceLabel);
             this.windowBox.Controls.Add(this.widthdrawnLabel);
             this.windowBox.Controls.Add(this.welcome_label);
@@ -242,21 +265,32 @@
             this.windowBox.TabIndex = 9;
             this.windowBox.TabStop = false;
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(25, 167);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(369, 16);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Press \"Enter\" to Go Back to Menu or \"Cancel\" to Exit.";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(25, 143);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(369, 16);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Press \"Enter\" to Go Back to Menu or \"Cancel\" to Exit.";
+            // 
+            // rememberLabel
+            // 
+            this.rememberLabel.AutoSize = true;
+            this.rememberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rememberLabel.ForeColor = System.Drawing.Color.Green;
+            this.rememberLabel.Location = new System.Drawing.Point(38, 169);
+            this.rememberLabel.Name = "rememberLabel";
+            this.rememberLabel.Size = new System.Drawing.Size(303, 16);
+            this.rememberLabel.TabIndex = 6;
+            this.rememberLabel.Text = "Remember to take cash from the dispenser";
             // 
             // balanceLabel
             // 
             this.balanceLabel.AutoSize = true;
             this.balanceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.balanceLabel.Location = new System.Drawing.Point(37, 123);
+            this.balanceLabel.Location = new System.Drawing.Point(37, 103);
             this.balanceLabel.Name = "balanceLabel";
             this.balanceLabel.Size = new System.Drawing.Size(180, 20);
             this.balanceLabel.TabIndex = 5;
@@ -266,7 +300,7 @@
             // 
             this.widthdrawnLabel.AutoSize = true;
             this.widthdrawnLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.widthdrawnLabel.Location = new System.Drawing.Point(37, 78);
+            this.widthdrawnLabel.Location = new System.Drawing.Point(37, 71);
             this.widthdrawnLabel.Name = "widthdrawnLabel";
             this.widthdrawnLabel.Size = new System.Drawing.Size(271, 20);
             this.widthdrawnLabel.TabIndex = 4;
@@ -282,26 +316,6 @@
             this.welcome_label.Size = new System.Drawing.Size(328, 33);
             this.welcome_label.TabIndex = 3;
             this.welcome_label.Text = "Withdrawal Completed";
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(0, 162);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(417, 95);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Insert deposit envelope here";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(417, 95);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Take Cash Here";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // withdrawAfterForm
             // 
@@ -344,8 +358,9 @@
         private System.Windows.Forms.Label welcome_label;
         private System.Windows.Forms.Label widthdrawnLabel;
         private System.Windows.Forms.Label balanceLabel;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label rememberLabel;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cashButton;
+        private System.Windows.Forms.Label label1;
     }
 }

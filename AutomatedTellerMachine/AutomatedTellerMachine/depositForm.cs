@@ -43,8 +43,10 @@ namespace AutomatedTellerMachine
         private void cancel_Clicked(object sender, EventArgs e)
         {
             this.Hide();
-            cancelForm cancelF = new cancelForm();
-            cancelF.ShowDialog();
+            menuForm mForm = new menuForm();
+            mForm.fromLogIn(accountNumber, pin);
+            mForm.ShowDialog();
+            con.Close();
             this.Close();
         }
 

@@ -14,7 +14,10 @@ namespace AutomatedTellerMachine
     public partial class withdrawAfterForm : Form
     {
         decimal balance = 0, option = 0;
-        String name = "", accountNumber = "", pin = "";
+        String accountNumber = "", pin = "";
+        bool cashTaken = false;
+
+        //Recieve parameters from Withdraw Form
         public void fromWithdraw(string accountNumber, string pin, decimal option)
         {
             this.accountNumber = accountNumber;
@@ -26,6 +29,7 @@ namespace AutomatedTellerMachine
         {
             widthdrawnLabel.Text += " $" + option.ToString();
             balanceLabel.Text += " $" + balance.ToString();
+            cashButton.BackColor = Color.Green;
         }
 
         public withdrawAfterForm()
@@ -33,24 +37,36 @@ namespace AutomatedTellerMachine
             InitializeComponent();
         }
 
+        //User has taken cash
+        private void cashButton_Click(object sender, EventArgs e)
+        {
+            cashTaken = true;
+            cashButton.BackColor = default(Color);
+        }
 
         //Return to menu
         private void enter_button_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            menuForm menuF = new menuForm();
-            menuF.fromLogIn(accountNumber, pin);
-            menuF.ShowDialog();
-            this.Close();
+            if (cashTaken)
+            {
+                this.Hide();
+                menuForm menuF = new menuForm();
+                menuF.fromLogIn(accountNumber, pin);
+                menuF.ShowDialog();
+                this.Close();
+            }
         }
 
         //Cancel transaction
         private void cancel_button_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            cancelForm cancelF = new cancelForm();
-            cancelF.ShowDialog();
-            this.Close();
+            if (cashTaken)
+            {
+                this.Hide();
+                cancelForm cancelF = new cancelForm();
+                cancelF.ShowDialog();
+                this.Close();
+            }
         }
 
         //Check balance

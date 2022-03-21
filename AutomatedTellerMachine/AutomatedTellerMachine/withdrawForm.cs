@@ -69,17 +69,7 @@ namespace AutomatedTellerMachine
                     }
                     break;
                 case "4":
-                    if (balance >= 80) {
-                        option = 80;
-                        withdrawQuery(option);
-                    }
-                    else
-                    {
-                        errorLabel.Text = "Insuficient funds!";
-                    }
-                    break;
-                case "5":
-                    if (balance >= 100){
+                    if (balance >= 100) {
                         option = 100;
                         withdrawQuery(option);
                     }
@@ -88,7 +78,7 @@ namespace AutomatedTellerMachine
                         errorLabel.Text = "Insuficient funds!";
                     }
                     break;
-                case "6":
+                case "5":
                     if (balance >= 200){
                         option = 200;
                         withdrawQuery(option);
@@ -98,18 +88,7 @@ namespace AutomatedTellerMachine
                         errorLabel.Text = "Insuficient funds!";
                     }
                     break;
-                case "7":
-                    if (balance >= 400)
-                    {
-                        option = 200;
-                        withdrawQuery(option);
-                    }
-                    else
-                    {
-                        errorLabel.Text = "Insuficient funds!";
-                    }
-                    break;
-                case "8":
+                case "6":
                     this.Hide();
                     menuForm menuF = new menuForm();
                     menuF.fromLogIn(accountNumber, pin);
