@@ -61,6 +61,7 @@ namespace AutomatedTellerMachine
                 case "2":
                     this.Hide();
                     withdrawForm withdrawF = new withdrawForm();
+                    withdrawF.fromMenu(name, balance, accountNumber, pin);
                     withdrawF.ShowDialog();
                     this.Close();
                     break;

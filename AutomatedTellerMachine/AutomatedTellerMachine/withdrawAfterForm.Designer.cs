@@ -1,6 +1,6 @@
 ﻿namespace AutomatedTellerMachine
 {
-    partial class cancelForm
+    partial class withdrawAfterForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.cashBox = new System.Windows.Forms.GroupBox();
             this.inputBox = new System.Windows.Forms.GroupBox();
             this.enter_button = new System.Windows.Forms.Button();
@@ -47,24 +45,20 @@
             this.eight_button = new System.Windows.Forms.Button();
             this.seven_button = new System.Windows.Forms.Button();
             this.windowBox = new System.Windows.Forms.GroupBox();
-            this.errorLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.balanceLabel = new System.Windows.Forms.Label();
+            this.widthdrawnLabel = new System.Windows.Forms.Label();
+            this.welcome_label = new System.Windows.Forms.Label();
             this.inputBox.SuspendLayout();
             this.windowBox.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // cashBox
             // 
             this.cashBox.Location = new System.Drawing.Point(371, 222);
             this.cashBox.Name = "cashBox";
             this.cashBox.Size = new System.Drawing.Size(417, 269);
-            this.cashBox.TabIndex = 5;
+            this.cashBox.TabIndex = 11;
             this.cashBox.TabStop = false;
             // 
             // inputBox
@@ -86,7 +80,7 @@
             this.inputBox.Location = new System.Drawing.Point(12, 222);
             this.inputBox.Name = "inputBox";
             this.inputBox.Size = new System.Drawing.Size(353, 269);
-            this.inputBox.TabIndex = 4;
+            this.inputBox.TabIndex = 10;
             this.inputBox.TabStop = false;
             // 
             // enter_button
@@ -98,6 +92,7 @@
             this.enter_button.TabIndex = 14;
             this.enter_button.Text = "Enter";
             this.enter_button.UseVisualStyleBackColor = true;
+            this.enter_button.Click += new System.EventHandler(this.enter_button_Click);
             // 
             // cancel_button
             // 
@@ -108,6 +103,7 @@
             this.cancel_button.TabIndex = 12;
             this.cancel_button.Text = "Cancel";
             this.cancel_button.UseVisualStyleBackColor = true;
+            this.cancel_button.Click += new System.EventHandler(this.cancel_button_Click);
             // 
             // clear_button
             // 
@@ -232,56 +228,57 @@
             // windowBox
             // 
             this.windowBox.Controls.Add(this.label3);
-            this.windowBox.Controls.Add(this.label2);
-            this.windowBox.Controls.Add(this.label1);
-            this.windowBox.Controls.Add(this.errorLabel);
-            this.windowBox.Location = new System.Drawing.Point(161, 12);
+            this.windowBox.Controls.Add(this.balanceLabel);
+            this.windowBox.Controls.Add(this.widthdrawnLabel);
+            this.windowBox.Controls.Add(this.welcome_label);
+            this.windowBox.Location = new System.Drawing.Point(171, 12);
             this.windowBox.Name = "windowBox";
             this.windowBox.Size = new System.Drawing.Size(412, 204);
-            this.windowBox.TabIndex = 3;
+            this.windowBox.TabIndex = 9;
             this.windowBox.TabStop = false;
-            // 
-            // errorLabel
-            // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorLabel.Location = new System.Drawing.Point(7, 177);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(0, 15);
-            this.errorLabel.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(48, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(328, 33);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Transaction Canceled!";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(80, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(249, 16);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "You have canceled the transaction.";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(128, 131);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(25, 167);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 33);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Goodbye!";
+            this.label3.Size = new System.Drawing.Size(369, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Press \"Enter\" to Go Back to Menu or \"Cancel\" to Exit.";
             // 
-            // cancelForm
+            // balanceLabel
+            // 
+            this.balanceLabel.AutoSize = true;
+            this.balanceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.balanceLabel.Location = new System.Drawing.Point(37, 123);
+            this.balanceLabel.Name = "balanceLabel";
+            this.balanceLabel.Size = new System.Drawing.Size(180, 20);
+            this.balanceLabel.TabIndex = 5;
+            this.balanceLabel.Text = "Your new balance is: ";
+            // 
+            // widthdrawnLabel
+            // 
+            this.widthdrawnLabel.AutoSize = true;
+            this.widthdrawnLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.widthdrawnLabel.Location = new System.Drawing.Point(37, 78);
+            this.widthdrawnLabel.Name = "widthdrawnLabel";
+            this.widthdrawnLabel.Size = new System.Drawing.Size(271, 20);
+            this.widthdrawnLabel.TabIndex = 4;
+            this.widthdrawnLabel.Text = "You have successfully withdrawn";
+            // 
+            // welcome_label
+            // 
+            this.welcome_label.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.welcome_label.AutoSize = true;
+            this.welcome_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcome_label.Location = new System.Drawing.Point(35, 16);
+            this.welcome_label.Name = "welcome_label";
+            this.welcome_label.Size = new System.Drawing.Size(328, 33);
+            this.welcome_label.TabIndex = 3;
+            this.welcome_label.Text = "Withdrawal Completed";
+            // 
+            // withdrawAfterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -289,9 +286,9 @@
             this.Controls.Add(this.cashBox);
             this.Controls.Add(this.inputBox);
             this.Controls.Add(this.windowBox);
-            this.Name = "cancelForm";
-            this.Text = "CancelForm";
-            this.Load += new System.EventHandler(this.CancelForm_Load);
+            this.Name = "withdrawAfterForm";
+            this.Text = "widthdrawAfterForm";
+            this.Load += new System.EventHandler(this.widthdrawAfterForm_Load);
             this.inputBox.ResumeLayout(false);
             this.windowBox.ResumeLayout(false);
             this.windowBox.PerformLayout();
@@ -300,7 +297,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Timer timer1;
+
         private System.Windows.Forms.GroupBox cashBox;
         private System.Windows.Forms.GroupBox inputBox;
         private System.Windows.Forms.Button enter_button;
@@ -318,9 +315,9 @@
         private System.Windows.Forms.Button eight_button;
         private System.Windows.Forms.Button seven_button;
         private System.Windows.Forms.GroupBox windowBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label errorLabel;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label welcome_label;
+        private System.Windows.Forms.Label widthdrawnLabel;
+        private System.Windows.Forms.Label balanceLabel;
         private System.Windows.Forms.Label label3;
     }
 }
