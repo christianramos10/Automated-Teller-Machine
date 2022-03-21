@@ -22,17 +22,16 @@ namespace AutomatedTellerMachine
             InitializeComponent();
         }
 
-        private void menuForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        public void fromLogIn(string name, decimal balance, string accountNumber, string pin) {
+        public void fromLogIn(string accountNumber, string pin) {
             welcome_label.Text += " " + name;
-            this.name = name; 
-            this.balance = balance;
             this.accountNumber = accountNumber; 
             this.pin = pin; 
+            checkBalance(this.accountNumber, this.pin);
+        }
+
+        private void menuForm_Load(object sender, EventArgs e)
+        {
+           
         }
 
         //This method will cancel the transaction and close the program
@@ -54,14 +53,14 @@ namespace AutomatedTellerMachine
                 case "1":
                     this.Hide();
                     balanceForm balanceF = new balanceForm();
-                    balanceF.fromMenu(name, balance, accountNumber, pin);
+                    balanceF.fromMenu(accountNumber, pin);
                     balanceF.ShowDialog();
                     this.Close();
                     break;
                 case "2":
                     this.Hide();
                     withdrawForm withdrawF = new withdrawForm();
-                    withdrawF.fromMenu(name, balance, accountNumber, pin);
+                    withdrawF.fromMenu(accountNumber, pin);
                     withdrawF.ShowDialog();
                     this.Close();
                     break;
@@ -83,6 +82,25 @@ namespace AutomatedTellerMachine
             }
 
           
+        }
+        //Check balance
+        private void checkBalance(string acc, string pin) {
+                //Connect to the database
+                SqlConnection con = new SqlConnection("Data Source=DESKTOP-4RQCFAD;Initial Catalog=atmP;User ID=admin;Password=12345");
+                con.Open(); 
+                string qryUserName = "select * from userTable where AccNumber='" + acc + "' AND AccPinNumber='" + pin + "'";
+                SqlCommand cmd = new SqlCommand(qryUserName, con);
+                SqlDataReader dr = cmd.ExecuteReader();           
+
+                decimal balance = 0;
+
+                while (dr.Read())
+                {       
+                    this.balance = decimal.Parse(dr["Balance"].ToString());
+                }
+                dr.Close();
+                con.Close();
+            
         }
     }
 }

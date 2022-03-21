@@ -133,7 +133,7 @@ namespace AutomatedTellerMachine
                 {
                     this.Hide();
                     menuForm mForm = new menuForm();
-                    mForm.fromLogIn(name, balance, accountNumber, pin);
+                    mForm.fromLogIn(accountNumber, pin);
                     mForm.ShowDialog();
                     con.Close();
                     this.Close();                     

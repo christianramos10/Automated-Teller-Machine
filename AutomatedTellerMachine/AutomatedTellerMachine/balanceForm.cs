@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace AutomatedTellerMachine
 {
@@ -20,11 +22,10 @@ namespace AutomatedTellerMachine
         }
 
         //Receive user info
-        public void fromMenu(string name, decimal balance, string accountNumber, string pin) {
-            this.name = name;
-            this.balance = balance;
+        public void fromMenu(string accountNumber, string pin) {
             this.accountNumber = accountNumber;
             this.pin = pin;
+            checkBalance(this.accountNumber, this.pin);
         }
 
         //Show balance
@@ -39,7 +40,7 @@ namespace AutomatedTellerMachine
         {
             this.Hide();
             menuForm menuF = new menuForm();
-            menuF.fromLogIn(name,balance,accountNumber,pin);
+            menuF.fromLogIn(accountNumber,pin);
             menuF.ShowDialog();
             this.Close();
         }
@@ -51,6 +52,27 @@ namespace AutomatedTellerMachine
             cancelForm cancelF = new cancelForm();
             cancelF.ShowDialog();
             this.Close();
+        }
+
+        //Check balance
+        private void checkBalance(string acc, string pin)
+        {
+            //Connect to the database
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-4RQCFAD;Initial Catalog=atmP;User ID=admin;Password=12345");
+            con.Open();
+            string qryUserName = "select * from userTable where AccNumber='" + acc + "' AND AccPinNumber='" + pin + "'";
+            SqlCommand cmd = new SqlCommand(qryUserName, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            decimal balance = 0;
+
+            while (dr.Read())
+            {
+                this.balance = decimal.Parse(dr["Balance"].ToString());
+            }
+            dr.Close();
+            con.Close();
+
         }
     }
 }
