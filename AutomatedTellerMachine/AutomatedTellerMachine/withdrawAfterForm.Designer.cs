@@ -282,9 +282,8 @@
             this.rememberLabel.ForeColor = System.Drawing.Color.Green;
             this.rememberLabel.Location = new System.Drawing.Point(38, 169);
             this.rememberLabel.Name = "rememberLabel";
-            this.rememberLabel.Size = new System.Drawing.Size(303, 16);
+            this.rememberLabel.Size = new System.Drawing.Size(0, 16);
             this.rememberLabel.TabIndex = 6;
-            this.rememberLabel.Text = "Remember to take cash from the dispenser";
             // 
             // balanceLabel
             // 

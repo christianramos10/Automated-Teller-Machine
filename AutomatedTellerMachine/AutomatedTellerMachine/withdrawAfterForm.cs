@@ -30,6 +30,7 @@ namespace AutomatedTellerMachine
             widthdrawnLabel.Text += " $" + option.ToString();
             balanceLabel.Text += " $" + balance.ToString();
             cashButton.BackColor = Color.Green;
+            rememberLabel.Text = "";
         }
 
         public withdrawAfterForm()
@@ -55,6 +56,9 @@ namespace AutomatedTellerMachine
                 menuF.ShowDialog();
                 this.Close();
             }
+            else {
+                rememberLabel.Text = "Remember to take cash from the dispenser";
+            }
         }
 
         //Cancel transaction
@@ -66,6 +70,10 @@ namespace AutomatedTellerMachine
                 exitForm exitF = new exitForm();
                 exitF.ShowDialog();
                 this.Close();
+            }
+            else
+            {
+                rememberLabel.Text = "Remember to take cash from the dispenser";
             }
         }
 
