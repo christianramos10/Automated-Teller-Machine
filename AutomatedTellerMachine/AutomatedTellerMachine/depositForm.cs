@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.SqlClient;
 
 namespace AutomatedTellerMachine
@@ -15,27 +14,32 @@ namespace AutomatedTellerMachine
     public partial class depositForm : Form
     {
         string accountNumber = "", pin = "";
-        decimal balance = "";
+        decimal balance = 0;
         //Connect to the database
         SqlConnection con = new SqlConnection("Data Source=DESKTOP-4RQCFAD;Initial Catalog=atmP;User ID=admin;Password=12345");
+
         public depositForm()
         {
             InitializeComponent();
             errorLabel.Text = "";
         }
+
+        //Recieve parameters
         public void from(string accNumber, string pin)
         {
             this.accountNumber = accNumber;
             this.pin = pin;
             checkBalance(this.accountNumber, this.pin);
         }
+
+        //Read number key
         private void num_Clicked(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-
             depositTextbox.Text += button.Text;  
         }
 
+        //Cancel transaction
         private void cancel_Clicked(object sender, EventArgs e)
         {
             this.Hide();
@@ -56,6 +60,7 @@ namespace AutomatedTellerMachine
             depositTextbox.Text = "";
         }
 
+        //Deposit amount
         private void enter_button_Click(object sender, EventArgs e)
         {
             int amount = int.Parse(depositTextbox.Text);
@@ -76,7 +81,6 @@ namespace AutomatedTellerMachine
         //Deposit amount query
         private void depositAmount(string amount) { 
             decimal amountD = decimal.Parse(amount);
-
             con.Open();
             string depQuery = "Update userTable SET Balance = Balance + '" + amountD + "' WHERE  AccNumber='" + accountNumber + "' AND AccPinNumber='" + pin + "'";
             SqlCommand cmd = new SqlCommand(depQuery, con);
@@ -96,7 +100,6 @@ namespace AutomatedTellerMachine
             string qryUserName = "select * from userTable where AccNumber='" + acc + "' AND AccPinNumber='" + pin + "'";
             SqlCommand cmd = new SqlCommand(qryUserName, con);
             SqlDataReader dr = cmd.ExecuteReader();
-            decimal balance = 0;
             while (dr.Read())
             {
                 this.balance = decimal.Parse(dr["Balance"].ToString());

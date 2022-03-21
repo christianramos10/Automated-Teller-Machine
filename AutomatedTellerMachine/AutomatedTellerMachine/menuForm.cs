@@ -22,6 +22,7 @@ namespace AutomatedTellerMachine
             InitializeComponent();
         }
 
+        //Recieve parameters from Log In
         public void fromLogIn(string accountNumber, string pin) {
             welcome_label.Text += " " + name;
             this.accountNumber = accountNumber; 
@@ -48,7 +49,6 @@ namespace AutomatedTellerMachine
         {
             Button button = (Button) sender;
             choice = button.Text;
-
             switch (choice) {
                 case "1":
                     this.Hide();
@@ -77,30 +77,22 @@ namespace AutomatedTellerMachine
                     this.Close();
                     break;
                 default:
-                    break;
-                
-            }
-
-          
+                    break;               
+            }     
         }
         //Check balance
         private void checkBalance(string acc, string pin) {
-                //Connect to the database
                 SqlConnection con = new SqlConnection("Data Source=DESKTOP-4RQCFAD;Initial Catalog=atmP;User ID=admin;Password=12345");
                 con.Open(); 
                 string qryUserName = "select * from userTable where AccNumber='" + acc + "' AND AccPinNumber='" + pin + "'";
                 SqlCommand cmd = new SqlCommand(qryUserName, con);
                 SqlDataReader dr = cmd.ExecuteReader();           
-
-                decimal balance = 0;
-
                 while (dr.Read())
                 {       
                     this.balance = decimal.Parse(dr["Balance"].ToString());
                 }
                 dr.Close();
-                con.Close();
-            
+                con.Close();           
         }
     }
 }

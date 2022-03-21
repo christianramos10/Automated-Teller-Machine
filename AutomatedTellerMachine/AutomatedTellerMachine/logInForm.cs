@@ -25,18 +25,15 @@ namespace AutomatedTellerMachine
 
         //Connect to the database at start
         private void logInForm_Load(object sender, EventArgs e)
-        {
-           
+        {         
             try
             {
                 con.Open();
-                MessageBox.Show("You are connected to the database!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Can not connect to the database!");
+                MessageBox.Show(ex.Message);
             }
-
         }
 
         //This method will add text when a number's button has been pressed.
@@ -52,7 +49,6 @@ namespace AutomatedTellerMachine
                 {
                     accNumber_textBox.Text = button.Text;
                 }
-
                 else
                 {
                     accNumber_textBox.Text += button.Text;
@@ -65,13 +61,11 @@ namespace AutomatedTellerMachine
                 {
                     pinNumber_textBox.Text = button.Text;
                 }
-
                 else
                 {
                     pinNumber_textBox.Text += button.Text;
                 }
-            }
-            
+            }      
         }
 
         //This method will remove the last character of the number string
@@ -99,6 +93,7 @@ namespace AutomatedTellerMachine
             }
         }
 
+        //Change focused textbox or search for account in database
         private void enter_button_Click(object sender, EventArgs e)
         {
             errorLabel.Text = "";
@@ -112,14 +107,11 @@ namespace AutomatedTellerMachine
 
             //Check if acc and pin exists
             else {
-
                 string qryUserName = "select * from userTable where AccNumber='" + accNumber_textBox.Text + "' AND AccPinNumber='" + pinNumber_textBox.Text + "'";
                 SqlCommand cmd = new SqlCommand(qryUserName, con);
                 SqlDataReader dr = cmd.ExecuteReader();
-                String name = "", accountNumber = "", pin="";
-                
+                String name = "", accountNumber = "", pin="";               
                 decimal balance = 0;
-
                 while (dr.Read()) {
                     name = dr["UserName"].ToString();
                     balance = decimal.Parse(dr["Balance"].ToString());

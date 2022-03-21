@@ -17,6 +17,7 @@ namespace AutomatedTellerMachine
             InitializeComponent();
         }
 
+        //Start timer when form loads
         private void CancelForm_Load(object sender, EventArgs e)
         {
             this.timer1.Enabled = true;
@@ -24,7 +25,7 @@ namespace AutomatedTellerMachine
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
         }
 
-        //Timer to go back to login page
+        //Timer to close app
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.Hide();
