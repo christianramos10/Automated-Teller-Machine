@@ -63,8 +63,8 @@ namespace AutomatedTellerMachine
             if (cashTaken)
             {
                 this.Hide();
-                cancelForm cancelF = new cancelForm();
-                cancelF.ShowDialog();
+                exitForm exitF = new exitForm();
+                exitF.ShowDialog();
                 this.Close();
             }
         }

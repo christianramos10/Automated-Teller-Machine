@@ -326,7 +326,8 @@
             this.Controls.Add(this.inputBox);
             this.Controls.Add(this.windowBox);
             this.Name = "withdrawAfterForm";
-            this.Text = "widthdrawAfterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "ATM";
             this.Load += new System.EventHandler(this.widthdrawAfterForm_Load);
             this.cashBox.ResumeLayout(false);
             this.inputBox.ResumeLayout(false);

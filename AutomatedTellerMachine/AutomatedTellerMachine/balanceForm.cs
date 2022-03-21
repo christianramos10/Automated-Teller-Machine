@@ -21,7 +21,7 @@ namespace AutomatedTellerMachine
         }
 
         //Receive user info
-        public void fromMenu(string accountNumber, string pin) {
+        public void from(string accountNumber, string pin) {
             this.accountNumber = accountNumber;
             this.pin = pin;
             checkBalance(this.accountNumber, this.pin);
@@ -44,12 +44,12 @@ namespace AutomatedTellerMachine
             this.Close();
         }
 
-        //Cancel transaction
+        //Exit system
         private void cancel_button_Click(object sender, EventArgs e)
         {
             this.Hide();
-            cancelForm cancelF = new cancelForm();
-            cancelF.ShowDialog();
+            exitForm exitF = new exitForm();          
+            exitF.ShowDialog();
             this.Close();
         }
 

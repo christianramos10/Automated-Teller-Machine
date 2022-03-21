@@ -26,7 +26,7 @@ namespace AutomatedTellerMachine
         }
 
         //Recieve parameters from Menu
-        public void fromMenu(string accountNumber, string pin) {
+        public void from(string accountNumber, string pin) {
             this.accountNumber = accountNumber;
             this.pin = pin;
             checkBalance(this.accountNumber, this.pin); 
@@ -90,9 +90,9 @@ namespace AutomatedTellerMachine
                     break;
                 case "6":
                     this.Hide();
-                    menuForm menuF = new menuForm();
-                    menuF.fromLogIn(accountNumber, pin);
-                    menuF.ShowDialog();
+                    cancelForm cancelF = new cancelForm();
+                    cancelF.from(this.accountNumber, this.pin);
+                    cancelF.ShowDialog();
                     con.Close();
                     this.Close();
                     break;

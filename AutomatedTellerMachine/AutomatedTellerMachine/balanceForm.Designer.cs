@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.cashBox = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.inputBox = new System.Windows.Forms.GroupBox();
             this.enter_button = new System.Windows.Forms.Button();
             this.cancel_button = new System.Windows.Forms.Button();
@@ -49,8 +51,6 @@
             this.balanceLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.tittle_label = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.cashBox.SuspendLayout();
             this.inputBox.SuspendLayout();
             this.windowBox.SuspendLayout();
@@ -65,6 +65,26 @@
             this.cashBox.Size = new System.Drawing.Size(417, 269);
             this.cashBox.TabIndex = 8;
             this.cashBox.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(0, 162);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(417, 95);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Insert deposit envelope here";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(0, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(417, 95);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Take Cash Here";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // inputBox
             // 
@@ -283,26 +303,6 @@
             this.tittle_label.TabIndex = 3;
             this.tittle_label.Text = "Account Balance";
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(0, 162);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(417, 95);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Insert deposit envelope here";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(417, 95);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Take Cash Here";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // balanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,7 +312,8 @@
             this.Controls.Add(this.inputBox);
             this.Controls.Add(this.windowBox);
             this.Name = "balanceForm";
-            this.Text = "balanceForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "ATM";
             this.Load += new System.EventHandler(this.balanceForm_Load);
             this.cashBox.ResumeLayout(false);
             this.inputBox.ResumeLayout(false);

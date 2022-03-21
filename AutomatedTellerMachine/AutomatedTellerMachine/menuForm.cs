@@ -53,20 +53,21 @@ namespace AutomatedTellerMachine
                 case "1":
                     this.Hide();
                     balanceForm balanceF = new balanceForm();
-                    balanceF.fromMenu(accountNumber, pin);
+                    balanceF.from(this.accountNumber, this.pin);
                     balanceF.ShowDialog();
                     this.Close();
                     break;
                 case "2":
                     this.Hide();
                     withdrawForm withdrawF = new withdrawForm();
-                    withdrawF.fromMenu(accountNumber, pin);
+                    withdrawF.from(this.accountNumber, this.pin);
                     withdrawF.ShowDialog();
                     this.Close();
                     break;
                 case "3":
                     this.Hide();
                     depositForm depositF = new depositForm();
+                    depositF.from(this.accountNumber, this.pin);  
                     depositF.ShowDialog();
                     this.Close();
                     break;

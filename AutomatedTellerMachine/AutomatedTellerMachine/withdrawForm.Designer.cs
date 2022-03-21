@@ -390,7 +390,8 @@
             this.Controls.Add(this.inputBox);
             this.Controls.Add(this.windowBox);
             this.Name = "withdrawForm";
-            this.Text = "withdrawForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "ATM";
             this.cashBox.ResumeLayout(false);
             this.inputBox.ResumeLayout(false);
             this.windowBox.ResumeLayout(false);

@@ -114,6 +114,9 @@
     <EmbeddedResource Include="depositForm.resx">
       <DependentUpon>depositForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="exitForm.resx">
+      <DependentUpon>exitForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="logInForm.resx">
       <DependentUpon>logInForm.cs</DependentUpon>
     </EmbeddedResource>

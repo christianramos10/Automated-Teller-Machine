@@ -43,9 +43,9 @@ namespace AutomatedTellerMachine
         private void cancel_Clicked(object sender, EventArgs e)
         {
             this.Hide();
-            menuForm mForm = new menuForm();
-            mForm.fromLogIn(accountNumber, pin);
-            mForm.ShowDialog();
+            cancelForm cancelF = new cancelForm();
+            cancelF.from(accountNumber, pin);
+            cancelF.ShowDialog();
             con.Close();
             this.Close();
         }
@@ -66,8 +66,7 @@ namespace AutomatedTellerMachine
         private void enter_button_Click(object sender, EventArgs e)
         {
             int amount = int.Parse(depositTextbox.Text);
-            if (amount % 20 == 0)
-            {
+            if (amount > 0 && amount % 20 == 0) {
                 depositAmount(depositTextbox.Text);
                 this.Hide();
                 depositAfterForm depositAF = new depositAfterForm();
@@ -75,7 +74,8 @@ namespace AutomatedTellerMachine
                 depositAF.ShowDialog();
                 this.Close();
             }
-            else {
+            else
+            {
                 errorLabel.Text = "Amount must be in multiples of 20!";
             }
         }

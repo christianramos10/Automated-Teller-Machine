@@ -12,24 +12,38 @@ namespace AutomatedTellerMachine
 {
     public partial class cancelForm : Form
     {
+        string accountNumber = "", pin = "";
+        System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         public cancelForm()
         {
             InitializeComponent();
         }
 
+        //Receive user info
+        public void from(string accountNumber, string pin)
+        {
+            this.accountNumber = accountNumber;
+            this.pin = pin;
+        }
+
         //Start timer when form loads
         private void CancelForm_Load(object sender, EventArgs e)
         {
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 2000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            timer.Interval = 4000;
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Start();           
         }
 
         //Timer to close app
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer_Tick(object sender, EventArgs e)
         {
+            timer.Stop();
+            timer.Tick -= new EventHandler(timer_Tick);
             this.Hide();
-            this.Close();
+            menuForm mForm = new menuForm();
+            mForm.fromLogIn(accountNumber, pin);
+            mForm.ShowDialog();  
+            this.Close();              
         }
     }
 }

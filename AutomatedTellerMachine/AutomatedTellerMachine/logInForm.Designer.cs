@@ -342,6 +342,7 @@
             this.Controls.Add(this.inputBox);
             this.Controls.Add(this.windowBox);
             this.Name = "logInForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ATM";
             this.Load += new System.EventHandler(this.logInForm_Load);
             this.windowBox.ResumeLayout(false);

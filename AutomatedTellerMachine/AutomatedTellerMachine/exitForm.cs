@@ -16,5 +16,21 @@ namespace AutomatedTellerMachine
         {
             InitializeComponent();
         }
+
+        //Start timer when form loads
+        private void exitForm_Load(object sender, EventArgs e)
+        {
+            Timer timer = new Timer();
+            timer.Interval = 4000;
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Start();
+        }
+
+        //Timer to close app
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+        }
     }
 }

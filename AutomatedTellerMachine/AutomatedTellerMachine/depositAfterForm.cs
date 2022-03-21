@@ -33,12 +33,12 @@ namespace AutomatedTellerMachine
             this.Close();
         }
 
-        //Cancel transaction
+        //Exit system
         private void cancel_button_Click(object sender, EventArgs e)
         {
             this.Hide();
-            cancelForm cancelF = new cancelForm();
-            cancelF.ShowDialog();
+            exitForm exitF = new exitForm();
+            exitF.ShowDialog();
             this.Close();
         }
     }
