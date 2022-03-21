@@ -12,6 +12,7 @@ namespace AutomatedTellerMachine
 {
     public partial class exitForm : Form
     {
+        System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         public exitForm()
         {
             InitializeComponent();
@@ -20,7 +21,6 @@ namespace AutomatedTellerMachine
         //Start timer when form loads
         private void exitForm_Load(object sender, EventArgs e)
         {
-            Timer timer = new Timer();
             timer.Interval = 4000;
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
