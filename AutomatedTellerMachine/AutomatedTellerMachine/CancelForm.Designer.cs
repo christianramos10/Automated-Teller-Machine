@@ -47,10 +47,13 @@
             this.eight_button = new System.Windows.Forms.Button();
             this.seven_button = new System.Windows.Forms.Button();
             this.windowBox = new System.Windows.Forms.GroupBox();
-            this.errorLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.errorLabel = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cashBox.SuspendLayout();
             this.inputBox.SuspendLayout();
             this.windowBox.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +64,8 @@
             // 
             // cashBox
             // 
+            this.cashBox.Controls.Add(this.button2);
+            this.cashBox.Controls.Add(this.button1);
             this.cashBox.Location = new System.Drawing.Point(371, 222);
             this.cashBox.Name = "cashBox";
             this.cashBox.Size = new System.Drawing.Size(417, 269);
@@ -241,25 +246,15 @@
             this.windowBox.TabIndex = 3;
             this.windowBox.TabStop = false;
             // 
-            // errorLabel
+            // label3
             // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorLabel.Location = new System.Drawing.Point(7, 177);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(0, 15);
-            this.errorLabel.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(48, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(328, 33);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Transaction Canceled!";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(128, 131);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(149, 33);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Goodbye!";
             // 
             // label2
             // 
@@ -271,15 +266,45 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "You have canceled the transaction.";
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(128, 131);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 33);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Goodbye!";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(48, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(328, 33);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Transaction Canceled!";
+            // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorLabel.ForeColor = System.Drawing.Color.Red;
+            this.errorLabel.Location = new System.Drawing.Point(7, 177);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(0, 15);
+            this.errorLabel.TabIndex = 6;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(0, 162);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(417, 95);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Insert deposit envelope here";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(0, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(417, 95);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Take Cash Here";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // cancelForm
             // 
@@ -292,6 +317,7 @@
             this.Name = "cancelForm";
             this.Text = "CancelForm";
             this.Load += new System.EventHandler(this.CancelForm_Load);
+            this.cashBox.ResumeLayout(false);
             this.inputBox.ResumeLayout(false);
             this.windowBox.ResumeLayout(false);
             this.windowBox.PerformLayout();
@@ -322,5 +348,7 @@
         private System.Windows.Forms.Label errorLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

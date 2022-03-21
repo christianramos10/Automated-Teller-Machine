@@ -50,12 +50,17 @@
             this.depositTextbox = new System.Windows.Forms.TextBox();
             this.enter_label = new System.Windows.Forms.Label();
             this.deposit_label = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cashBox.SuspendLayout();
             this.inputBox.SuspendLayout();
             this.windowBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // cashBox
             // 
+            this.cashBox.Controls.Add(this.button2);
+            this.cashBox.Controls.Add(this.button1);
             this.cashBox.Location = new System.Drawing.Point(371, 222);
             this.cashBox.Name = "cashBox";
             this.cashBox.Size = new System.Drawing.Size(417, 269);
@@ -299,6 +304,26 @@
             this.deposit_label.TabIndex = 3;
             this.deposit_label.Text = "Deposit!";
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(0, 162);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(417, 95);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Insert deposit envelope here";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(0, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(417, 95);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Take Cash Here";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // depositForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,6 +334,7 @@
             this.Controls.Add(this.windowBox);
             this.Name = "depositForm";
             this.Text = "depositForm";
+            this.cashBox.ResumeLayout(false);
             this.inputBox.ResumeLayout(false);
             this.windowBox.ResumeLayout(false);
             this.windowBox.PerformLayout();
@@ -340,5 +366,7 @@
         private System.Windows.Forms.TextBox depositTextbox;
         private System.Windows.Forms.Label errorLabel;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

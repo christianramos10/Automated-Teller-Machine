@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.SqlClient;
 
 namespace AutomatedTellerMachine
@@ -57,22 +56,17 @@ namespace AutomatedTellerMachine
         //Check balance
         private void checkBalance(string acc, string pin)
         {
-            //Connect to the database
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-4RQCFAD;Initial Catalog=atmP;User ID=admin;Password=12345");
             con.Open();
             string qryUserName = "select * from userTable where AccNumber='" + acc + "' AND AccPinNumber='" + pin + "'";
             SqlCommand cmd = new SqlCommand(qryUserName, con);
             SqlDataReader dr = cmd.ExecuteReader();
-
-            decimal balance = 0;
-
             while (dr.Read())
             {
                 this.balance = decimal.Parse(dr["Balance"].ToString());
             }
             dr.Close();
             con.Close();
-
         }
 
 
