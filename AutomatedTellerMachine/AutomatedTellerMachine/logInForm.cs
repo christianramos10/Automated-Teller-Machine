@@ -13,8 +13,7 @@ namespace AutomatedTellerMachine
 {
     public partial class logInForm : Form
     {
-        bool accWrite = true;
-        bool pinWrite = false;
+        int stage = 0;
 
         //Connect to the database
         SqlConnection con = new SqlConnection("Data Source=DESKTOP-4RQCFAD;Initial Catalog=atmP;User ID=admin;Password=12345");
@@ -43,58 +42,35 @@ namespace AutomatedTellerMachine
             Button button = (Button)sender;
 
             //If we are writing on the acc text box: 
-            if (accWrite)
+            if (stage==0)
             {
-                if (accNumber_textBox.Text == "")
-                {
-                    accNumber_textBox.Text = button.Text;
-                }
-                else
-                {
-                    accNumber_textBox.Text += button.Text;
-                }
+                accNumber_textBox.Text += button.Text;
+              
             }
 
             //Else (we are writing on the pin text box):
-            else {
-                if (pinNumber_textBox.Text == "")
-                {
-                    pinNumber_textBox.Text = button.Text;
-                }
-                else
-                {
-                    pinNumber_textBox.Text += button.Text;
-                }
+            else {      
+                pinNumber_textBox.Text += button.Text;
             }      
         }
 
         //This method will remove the last character of the number string
         private void backspace_button_Click(object sender, EventArgs e)
         {
-            if (accWrite && accNumber_textBox.Text != "")
+            if ((stage==0 && accNumber_textBox.Text.Length != 0) || (stage==1 && pinNumber_textBox.Text.Length != 0)) 
             {
-                if(accNumber_textBox.Text.Length != 0)
-                {
                     accNumber_textBox.Text = accNumber_textBox.Text.Remove(accNumber_textBox.Text.Length - 1);
-                }
-            }
-            else if (pinWrite && pinNumber_textBox.Text != "")
-            {
-                if(pinNumber_textBox.Text.Length != 0)
-                {
-                    pinNumber_textBox.Text = pinNumber_textBox.Text.Remove(pinNumber_textBox.Text.Length - 1);
-                }               
-            }
+            }          
         }
 
         //This method will clear the acc or pin numbers entried.
         private void clear_button_Click(object sender, EventArgs e)
         {
-            if (accWrite)
+            if (stage==0)
             {
                 accNumber_textBox.Text = "";
             }
-            else if (pinWrite) {
+            else if (stage==1) {
                 pinNumber_textBox.Text = "";
             }
         }
@@ -104,11 +80,10 @@ namespace AutomatedTellerMachine
         {
             errorLabel.Text = "";
 
-            if (accWrite && accNumber_textBox.Text != "")
+            if (stage==0 && accNumber_textBox.Text.Length != 0)
             {
-                accWrite = false;
-                pinNumber_textBox.Focus();
-                pinWrite = true;
+                stage = 1;
+                pinNumber_textBox.Focus();          
             }
 
             //Check if acc and pin exists
@@ -143,8 +118,7 @@ namespace AutomatedTellerMachine
                     accNumber_textBox.Text = "";
                     pinNumber_textBox.Text = "";
                     accNumber_textBox.Focus();
-                    accWrite = true;
-                    pinWrite = false;
+                    stage = 0;
                 }
             }
         }
