@@ -73,11 +73,17 @@ namespace AutomatedTellerMachine
         {
             if (accWrite && accNumber_textBox.Text != "")
             {
-                accNumber_textBox.Text = accNumber_textBox.Text.Remove(accNumber_textBox.Text.Length - 1);
+                if(accNumber_textBox.Text.Length != 0)
+                {
+                    accNumber_textBox.Text = accNumber_textBox.Text.Remove(accNumber_textBox.Text.Length - 1);
+                }
             }
             else if (pinWrite && pinNumber_textBox.Text != "")
             {
-                pinNumber_textBox.Text = pinNumber_textBox.Text.Remove(pinNumber_textBox.Text.Length - 1);
+                if(pinNumber_textBox.Text.Length != 0)
+                {
+                    pinNumber_textBox.Text = pinNumber_textBox.Text.Remove(pinNumber_textBox.Text.Length - 1);
+                }               
             }
         }
 

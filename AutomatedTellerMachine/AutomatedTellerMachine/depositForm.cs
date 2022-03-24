@@ -53,7 +53,9 @@ namespace AutomatedTellerMachine
         //This method will remove the last character of the number string
         private void backspace_button_Click(object sender, EventArgs e)
         {
-            depositTextbox.Text = depositTextbox.Text.Remove(depositTextbox.Text.Length- 1);
+            if(this.depositTextbox.Text.Length != 0) {
+                depositTextbox.Text = depositTextbox.Text.Remove(depositTextbox.Text.Length - 1);
+            }
         }
 
         //This will clear the text box
