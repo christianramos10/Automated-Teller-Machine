@@ -53,7 +53,7 @@ namespace AutomatedTellerMachine
                 case "1":
                     this.Hide();
                     balanceForm balanceF = new balanceForm();
-                    balanceF.from(this.accountNumber, this.pin);
+                    balanceF.from(this.accountNumber, this.pin, this.name);
                     balanceF.ShowDialog();
                     this.Close();
                     break;
@@ -91,6 +91,7 @@ namespace AutomatedTellerMachine
                 while (dr.Read())
                 {       
                     this.balance = decimal.Parse(dr["Balance"].ToString());
+                    this.name = dr["UserName"].ToString();
                 }
                 dr.Close();
                 con.Close();           

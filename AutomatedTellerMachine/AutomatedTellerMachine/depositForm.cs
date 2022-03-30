@@ -15,6 +15,8 @@ namespace AutomatedTellerMachine
     {
         string accountNumber = "", pin = "";
         decimal balance = 0;
+        bool cashInMultiples = false;
+
         //Connect to the database
         SqlConnection con = new SqlConnection("Data Source=DESKTOP-4RQCFAD;Initial Catalog=atmP;User ID=admin;Password=12345");
 
@@ -36,7 +38,8 @@ namespace AutomatedTellerMachine
         private void num_Clicked(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            depositTextbox.Text += button.Text;  
+            if (!cashInMultiples) depositTextbox.Text += button.Text;
+            
         }
 
         //Cancel transaction
@@ -53,32 +56,29 @@ namespace AutomatedTellerMachine
         //This method will remove the last character of the number string
         private void backspace_button_Click(object sender, EventArgs e)
         {
-            if(this.depositTextbox.Text.Length != 0) {
-                depositTextbox.Text = depositTextbox.Text.Remove(depositTextbox.Text.Length - 1);
-            }
+            if(this.depositTextbox.Text.Length != 0 && !cashInMultiples) depositTextbox.Text = depositTextbox.Text.Remove(depositTextbox.Text.Length - 1);
+            
         }
 
         //This will clear the text box
         private void clear_button_Click(object sender, EventArgs e)
         {
-            depositTextbox.Text = "";
+            if(!cashInMultiples) depositTextbox.Text = "";
         }
 
         //Deposit amount
         private void enter_button_Click(object sender, EventArgs e)
         {
             int amount = int.Parse(depositTextbox.Text);
-            if (amount > 0 && amount % 20 == 0) {
-                depositAmount(depositTextbox.Text);
-                this.Hide();
-                depositAfterForm depositAF = new depositAfterForm();
-                depositAF.from(this.accountNumber, this.pin);
-                depositAF.ShowDialog();
-                this.Close();
+            if (amount > 0) {
+                cashInMultiples = true;
+                depositButton.BackColor = Color.Green;
+                errorLabel.Text = "Please deposit up to 50 bills at a time.";    
+               depositTextbox.Enabled = false;
             }
             else
             {
-                errorLabel.Text = "Amount must be in multiples of 20!";
+                errorLabel.Text = "Amount must be bigger than 0!";
             }
         }
 
@@ -97,6 +97,19 @@ namespace AutomatedTellerMachine
             con.Close();
         }
 
+        //Deposit button
+        private void depositButton_Click(object sender, EventArgs e)
+        {   if (cashInMultiples) {
+                depositButton.BackColor = default(Color);
+                depositAmount(depositTextbox.Text);
+                this.Hide();
+                depositAfterForm depositAF = new depositAfterForm();
+                depositAF.from(this.accountNumber, this.pin);
+                depositAF.ShowDialog();
+                this.Close();
+            }
+        }
+
         //Check balance query
         private void checkBalance(string acc, string pin)
         {
@@ -110,6 +123,6 @@ namespace AutomatedTellerMachine
             }
             dr.Close();
             con.Close();
-        }
+        }      
     }
 }

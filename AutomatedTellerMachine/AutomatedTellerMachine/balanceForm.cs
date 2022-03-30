@@ -21,10 +21,11 @@ namespace AutomatedTellerMachine
         }
 
         //Receive user info
-        public void from(string accountNumber, string pin) {
+        public void from(string accountNumber, string pin, String name) {
             this.accountNumber = accountNumber;
             this.pin = pin;
             checkBalance(this.accountNumber, this.pin);
+            this.name = name;
         }
 
         //Show balance

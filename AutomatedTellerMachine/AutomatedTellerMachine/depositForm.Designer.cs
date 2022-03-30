@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.cashBox = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.depositButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.inputBox = new System.Windows.Forms.GroupBox();
             this.enter_button = new System.Windows.Forms.Button();
@@ -59,7 +59,7 @@
             // 
             // cashBox
             // 
-            this.cashBox.Controls.Add(this.button2);
+            this.cashBox.Controls.Add(this.depositButton);
             this.cashBox.Controls.Add(this.button1);
             this.cashBox.Location = new System.Drawing.Point(371, 222);
             this.cashBox.Name = "cashBox";
@@ -67,15 +67,16 @@
             this.cashBox.TabIndex = 11;
             this.cashBox.TabStop = false;
             // 
-            // button2
+            // depositButton
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(0, 162);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(417, 95);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Insert deposit envelope here";
-            this.button2.UseVisualStyleBackColor = true;
+            this.depositButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.depositButton.Location = new System.Drawing.Point(0, 162);
+            this.depositButton.Name = "depositButton";
+            this.depositButton.Size = new System.Drawing.Size(417, 95);
+            this.depositButton.TabIndex = 12;
+            this.depositButton.Text = "Insert deposit envelope here";
+            this.depositButton.UseVisualStyleBackColor = true;
+            this.depositButton.Click += new System.EventHandler(this.depositButton_Click);
             // 
             // button1
             // 
@@ -367,7 +368,7 @@
         private System.Windows.Forms.TextBox depositTextbox;
         private System.Windows.Forms.Label errorLabel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button depositButton;
         private System.Windows.Forms.Button button1;
     }
 }
