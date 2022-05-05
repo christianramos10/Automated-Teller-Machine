@@ -281,7 +281,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(86, 91);
+            this.label2.Location = new System.Drawing.Point(75, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(271, 24);
             this.label2.TabIndex = 7;
@@ -299,7 +299,7 @@
             // 
             // depositTextbox
             // 
-            this.depositTextbox.Location = new System.Drawing.Point(142, 128);
+            this.depositTextbox.Location = new System.Drawing.Point(152, 134);
             this.depositTextbox.Name = "depositTextbox";
             this.depositTextbox.Size = new System.Drawing.Size(100, 20);
             this.depositTextbox.TabIndex = 5;
@@ -308,11 +308,11 @@
             // 
             this.enter_label.AutoSize = true;
             this.enter_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enter_label.Location = new System.Drawing.Point(6, 67);
+            this.enter_label.Location = new System.Drawing.Point(86, 67);
             this.enter_label.Name = "enter_label";
-            this.enter_label.Size = new System.Drawing.Size(401, 24);
+            this.enter_label.Size = new System.Drawing.Size(238, 24);
             this.enter_label.TabIndex = 4;
-            this.enter_label.Text = "Enter amount to deposit in multiples of 20:";
+            this.enter_label.Text = "Enter amount to deposit:";
             // 
             // deposit_label
             // 

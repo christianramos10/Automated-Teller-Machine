@@ -1,0 +1,10 @@
+Instructions for running Automated Teller Machine’s Project:
+
+1.Run the file “initialQuery.sql” in your local SSMS.
+2.Create a profile to access your database engine.
+	Username: admin 
+	Password: 12345
+3.Run project.
+4.On login page enter the default user’s account and pin:
+	Account number: 12345
+	Pin: 12345
