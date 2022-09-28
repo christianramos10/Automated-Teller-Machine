@@ -44,12 +44,15 @@ A software application for performing teller machine's transactions such as:
   ![2022-09-28 (10)](https://user-images.githubusercontent.com/74178789/192754311-8b74d28b-20e1-4b07-8a50-7ff5ae34c50e.png)
   <br>
   Choice - Exit ATM
+   <br>
   ![2022-09-28 (11)](https://user-images.githubusercontent.com/74178789/192754354-ca4c7677-7d8c-4375-8561-8e1ba31fd137.png)
-
+ <br>
   Note: There is also a Cancel "Section" for the application in case the user decides to cancel a transaction:
-  
-  
-
+ <br>
+  ![2022-09-28 (12)](https://user-images.githubusercontent.com/74178789/192754947-a6ce1030-b5ea-478e-b321-8595f98c0977.png)
+ <br>
+  <br>
+ PD: This project and it's content were designed and implemented according to the course's instructions and requirements. 
 
 
  
