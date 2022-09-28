@@ -16,7 +16,7 @@ namespace AutomatedTellerMachine
         int stage = 0;
 
         //Connect to the database
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-4RQCFAD;Initial Catalog=atmP;User ID=admin;Password=12345");
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-ETTN470;Initial Catalog=atmP;User ID=admin;Password=12345");
         public logInForm()
         {
             InitializeComponent();

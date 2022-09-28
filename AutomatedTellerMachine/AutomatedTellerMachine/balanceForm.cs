@@ -57,7 +57,7 @@ namespace AutomatedTellerMachine
         //Check balance
         private void checkBalance(string acc, string pin)
         {
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-4RQCFAD;Initial Catalog=atmP;User ID=admin;Password=12345");
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-ETTN470;Initial Catalog=atmP;User ID=admin;Password=12345");
             con.Open();
             string qryUserName = "select * from userTable where AccNumber='" + acc + "' AND AccPinNumber='" + pin + "'";
             SqlCommand cmd = new SqlCommand(qryUserName, con);
